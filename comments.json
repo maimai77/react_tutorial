@@ -1,4 +1,10 @@
 [
-  {"author": "Pete Hund", "text": "This is one comment"},
-  {"author": "Jordan Walke", "text": "This is *another* comment"}
+    {
+        "author": "Pete Hund",
+        "text": "This is one comment"
+    },
+    {
+        "author": "Jordan Walke",
+        "text": "This is *another* comment"
+    }
 ]
