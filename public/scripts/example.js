@@ -66,11 +66,25 @@ var Comment = React.createClass({
 });
 
 var CommentForm = React.createClass({
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var author = ReactDOM.findDOMNode(this.refs.author).value.trim();
+    var text = ReactDOM.findDOMNode(this.refs.text).value.trim();
+    if (!text || !author) {
+      return;
+    }
+    // TODO: サーバにリクエストを送信
+    ReactDOM.findDOMNode(this.refs.author).value = '';
+    ReactDOM.findDOMNode(this.refs.text).value = '';
+    return;
+  },
   render: function() {
     return (
-      <div clssName="commentForm">
-        Hello, world! I am a CommentForm.
-      </div>
+      <form clssName="commentForm" onSubmit={this.handleSubmit}>
+        <input type="text" placeholder="Your name" ref="author" />
+        <input type="text" placeholder="Say something..." ref="text" />
+        <input type="submit" value="Post" />
+      </form>
     );
   }
 });
